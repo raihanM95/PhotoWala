@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PhotoWala.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,7 @@ namespace PhotoWala.DatabaseContext.DatabaseContext
             : base(options)
         {
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }
