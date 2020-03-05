@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoWala", "PhotoWala\Phot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoWala.Models", "PhotoWala.Models\PhotoWala.Models.csproj", "{10A373D5-A946-4EC9-8B71-5F5B89E105A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoWala.Interface", "PhotoWala.Interface\PhotoWala.Interface.csproj", "{CCE714FF-C44E-496E-A094-733C539E538D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{10A373D5-A946-4EC9-8B71-5F5B89E105A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10A373D5-A946-4EC9-8B71-5F5B89E105A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10A373D5-A946-4EC9-8B71-5F5B89E105A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE714FF-C44E-496E-A094-733C539E538D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE714FF-C44E-496E-A094-733C539E538D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE714FF-C44E-496E-A094-733C539E538D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE714FF-C44E-496E-A094-733C539E538D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
