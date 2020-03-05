@@ -8,7 +8,7 @@ namespace PhotoWala.Interface
     public interface IUserService
     {
         bool Register(User user);
-        bool Login(string userName, string Password);
+        bool Login(string userName, string password);
         //
         bool UpdateInfo(User user);
         List<User> GetUsers();

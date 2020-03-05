@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PhotoWala.DAL\PhotoWala.DAL.csproj" />
+    <ProjectReference Include="..\PhotoWala.Interface\PhotoWala.Interface.csproj" />
+    <ProjectReference Include="..\PhotoWala.Models\PhotoWala.Models.csproj" />
+  </ItemGroup>
+
 </Project>
