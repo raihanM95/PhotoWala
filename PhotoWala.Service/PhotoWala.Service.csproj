@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PhotoWala.DAL\PhotoWala.DAL.csproj" />
+    <ProjectReference Include="..\PhotoWala.DatabaseContext\PhotoWala.DatabaseContext.csproj" />
     <ProjectReference Include="..\PhotoWala.Interface\PhotoWala.Interface.csproj" />
     <ProjectReference Include="..\PhotoWala.Models\PhotoWala.Models.csproj" />
   </ItemGroup>

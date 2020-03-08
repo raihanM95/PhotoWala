@@ -9,7 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PhotoWala.BLL;
+using PhotoWala.DAL.Repositories;
 using PhotoWala.DatabaseContext.DatabaseContext;
+using PhotoWala.Interface;
+using PhotoWala.Service;
 
 namespace PhotoWala
 {
@@ -29,6 +33,8 @@ namespace PhotoWala
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<PhotoWalaDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultDBConnection")));
+            
+            services.AddScoped<IUserService, UserRepository>();
             //
             services.AddControllers();
         }
@@ -52,10 +58,10 @@ namespace PhotoWala
                 //
                 endpoints.MapControllers();
 
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.WriteAsync("Hello World!");
-                //});
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync(" Only for API");
+                });
             });
         }
     }

@@ -5,19 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PhotoWala.BLL\PhotoWala.BLL.csproj" />
     <ProjectReference Include="..\PhotoWala.DatabaseContext\PhotoWala.DatabaseContext.csproj" />
+    <ProjectReference Include="..\PhotoWala.Interface\PhotoWala.Interface.csproj" />
+    <ProjectReference Include="..\PhotoWala.Models\PhotoWala.Models.csproj" />
+    <ProjectReference Include="..\PhotoWala.Service\PhotoWala.Service.csproj" />
   </ItemGroup>
 
 </Project>

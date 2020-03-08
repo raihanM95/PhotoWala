@@ -1,14 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PhotoWala.DatabaseContext.DatabaseContext;
+using PhotoWala.Interface;
 using PhotoWala.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PhotoWala.DAL.Repositories
+namespace PhotoWala.Service.Repositories
 {
-    public class UserRepository
+    public class UserRepository : IUserService
     {
         private readonly PhotoWalaDbContext _db;
 
