@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PhotoWala.DatabaseContext\PhotoWala.DatabaseContext.csproj" />
     <ProjectReference Include="..\PhotoWala.Interface\PhotoWala.Interface.csproj" />
     <ProjectReference Include="..\PhotoWala.Models\PhotoWala.Models.csproj" />

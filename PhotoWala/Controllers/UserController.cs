@@ -17,28 +17,30 @@ namespace PhotoWala.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        StringBuilder validation = new StringBuilder();
-        private readonly UserManager _manager;
+        //StringBuilder validation = new StringBuilder();
+        private readonly IGenericService<User> _service;
+        
         //Result result;
 
-        public UserController(UserManager manager)
+        public UserController(IGenericService<User> service)
         {
-            _manager = manager;
+            _service = service;
+            
             //result = new Result();
         }
 
-        // GET: api/User/users
+        // GET: api/user/users
         [HttpGet]
         [Route("users")]
         public async Task<IActionResult> GetUsers()
         {
-            var list = _manager.GetUsers();
+            var list = _service.GetAll();
             return Ok(list);
         }
 
-        // POST: api/User/register
+        // POST: api/user/register
         [HttpPost]
-        //[Route("register")]
+        [Route("register")]
         public IActionResult Register(User user)
         {
             if (!ModelState.IsValid)
@@ -49,7 +51,9 @@ namespace PhotoWala.Controllers
             {
                 try
                 {
-                    _manager.Register(user);
+                    _service.Insert(user);
+                    _service.Save();
+
                     return Ok();
                 }
                 catch (Exception ex)

@@ -10,10 +10,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PhotoWala.BLL;
-using PhotoWala.DAL.Repositories;
 using PhotoWala.DatabaseContext.DatabaseContext;
 using PhotoWala.Interface;
+using PhotoWala.Interface.IService;
+using PhotoWala.Models;
 using PhotoWala.Service;
+using PhotoWala.Service.Repositories;
 
 namespace PhotoWala
 {
@@ -34,7 +36,8 @@ namespace PhotoWala
         {
             services.AddDbContextPool<PhotoWalaDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultDBConnection")));
             
-            services.AddScoped<IUserService, UserRepository>();
+            services.AddTransient<IGenericService<User>, GenericService<User>>();
+            services.AddScoped<IUserRepository, UserRepository>();
             //
             services.AddControllers();
         }
