@@ -18,14 +18,16 @@ namespace PhotoWala.Controllers
     public class UserController : ControllerBase
     {
         //StringBuilder validation = new StringBuilder();
+        private IUnitOfWork _unitOfWork;
         private readonly IGenericService<User> _service;
-        
+
         //Result result;
 
-        public UserController(IGenericService<User> service)
+        public UserController(IGenericService<User> service, IUnitOfWork unitOfWork)
         {
+            _unitOfWork = unitOfWork;
             _service = service;
-            
+
             //result = new Result();
         }
 
@@ -52,12 +54,13 @@ namespace PhotoWala.Controllers
                 try
                 {
                     _service.Insert(user);
-                    _service.Save();
+                    _unitOfWork.Commit();
 
                     return Ok();
                 }
                 catch (Exception ex)
                 {
+                    _unitOfWork.Rollback();
                     return BadRequest(ex.Message.ToString());
                 }
             }

@@ -35,8 +35,10 @@ namespace PhotoWala
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<PhotoWalaDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultDBConnection")));
-            
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IGenericService<User>, GenericService<User>>();
+            services.AddTransient<IGenericService<Test>, GenericService<Test>>();
             services.AddScoped<IUserRepository, UserRepository>();
             //
             services.AddControllers();

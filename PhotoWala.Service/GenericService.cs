@@ -8,7 +8,7 @@ using System.Text;
 
 namespace PhotoWala.Service
 {
-    public class GenericService<T>: IGenericService<T> where T : class
+    public class GenericService<T> : IGenericService<T> where T : class
     {
         private readonly PhotoWalaDbContext _db;
         private DbSet<T> table;
@@ -40,11 +40,6 @@ namespace PhotoWala.Service
         {
             T exists = table.Find(id);
             table.Remove(exists);
-        }
-
-        public void Save()
-        {
-            _db.SaveChanges();
         }
     }
 }
