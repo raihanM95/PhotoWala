@@ -6,6 +6,7 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Encrypt.Pass;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -67,6 +68,7 @@ namespace PhotoWala.Controllers
             {
                 try
                 {
+                    user.Password = Crypto.Hash(user.Password);
                     _service.Insert(user);
                     _unitOfWork.Commit();
 
