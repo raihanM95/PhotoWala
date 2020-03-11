@@ -1,4 +1,5 @@
-﻿using PhotoWala.DatabaseContext.DatabaseContext;
+﻿using Encrypt.Pass;
+using PhotoWala.DatabaseContext.DatabaseContext;
 using PhotoWala.Interface.IService;
 using System;
 using System.Collections.Generic;
@@ -9,16 +10,25 @@ namespace PhotoWala.Service.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        public bool Login(string userName, string password)
+        private readonly PhotoWalaDbContext _db;
+        
+        public UserRepository(PhotoWalaDbContext db)
         {
-            int isExecuted = 0;
+            _db = db;
+        }
 
-            if (isExecuted > 0)
+        public string Login(string userName, string password)
+        {
+            var user = _db.Users.Where(u => u.UserName == userName).SingleOrDefault();
+            if(user != null)
             {
-                return true;
+                if (string.Compare(Crypto.Hash(password), user.Password) == 0)
+                {
+                    return user.Role;
+                }
             }
-
-            return false;
+            
+            return "false";
         }
     }
 }

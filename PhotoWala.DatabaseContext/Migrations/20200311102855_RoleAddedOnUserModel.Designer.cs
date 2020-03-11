@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhotoWala.DatabaseContext.DatabaseContext;
 
 namespace PhotoWala.DatabaseContext.Migrations
 {
     [DbContext(typeof(PhotoWalaDbContext))]
-    partial class PhotoWalaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200311102855_RoleAddedOnUserModel")]
+    partial class RoleAddedOnUserModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

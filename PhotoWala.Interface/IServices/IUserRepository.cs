@@ -6,6 +6,6 @@ namespace PhotoWala.Interface.IService
 {
     public interface IUserRepository
     {
-        bool Login(string userName, string password);
+        string Login(string userName, string password);
     }
 }
