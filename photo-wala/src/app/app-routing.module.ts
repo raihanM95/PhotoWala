@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   // site with layout routes
@@ -11,6 +12,7 @@ const routes: Routes = [
     component: AppLayoutComponent,
     children: [
       { path: '', component: HomeComponent, pathMatch: 'full'},
+      { path: 'about', component: AboutComponent },
     ]
   },
   
