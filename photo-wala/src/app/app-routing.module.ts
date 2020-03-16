@@ -9,6 +9,7 @@ import { FourzerofourComponent } from './fourzerofour/fourzerofour.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { PhotographersComponent } from './photographers/photographers.component';
 
 const routes: Routes = [
   // site with layout routes
@@ -27,6 +28,7 @@ const routes: Routes = [
     children: [
       { path: 'about', component: AboutComponent },
       { path: 'contact', component: ContactComponent },
+      { path: 'photographers', component: PhotographersComponent },
     ]
   },
   
