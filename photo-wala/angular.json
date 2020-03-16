@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/chocolat/dist/css/chocolat.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/chocolat/dist/js/jquery.chocolat.js",
+              "src/assets/js/light-box.js"
+            ]
           },
           "configurations": {
             "production": {

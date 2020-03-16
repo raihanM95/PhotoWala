@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PhotographersComponent } from './photographers/photographers.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PhotographersComponent } from './photographers/photographers.component'
     AboutComponent,
     ContactComponent,
     PhotographersComponent,
+    GalleryComponent,
 
   ],
   imports: [
