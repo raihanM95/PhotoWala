@@ -10,9 +10,12 @@ import { FooterComponent } from './_layout/footer/footer.component';
 import { HomeLayoutComponent } from './_layout/home-layout/home-layout.component';
 import { HomeHeaderComponent } from './_layout/home-header/home-header.component';
 
+import { FourzerofourComponent } from './fourzerofour/fourzerofour.component';
+
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+
 
 @NgModule({
   declarations: [
@@ -24,10 +27,12 @@ import { ContactComponent } from './contact/contact.component';
     HomeLayoutComponent,
     HomeHeaderComponent,
     
+    FourzerofourComponent,
+    
     HomeComponent,
     AboutComponent,
-    ContactComponent
-    
+    ContactComponent,
+
   ],
   imports: [
     BrowserModule,
