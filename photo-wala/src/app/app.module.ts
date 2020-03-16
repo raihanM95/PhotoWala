@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AppLayoutComponent } from './_layout/app-layout/app-layout.component';
 import { AppHeaderComponent } from './_layout/app-header/app-header.component';
 import { FooterComponent } from './_layout/footer/footer.component';
+import { HomeLayoutComponent } from './_layout/home-layout/home-layout.component';
+import { HomeHeaderComponent } from './_layout/home-header/home-header.component';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -18,9 +20,12 @@ import { AboutComponent } from './about/about.component';
     AppLayoutComponent,
     AppHeaderComponent,
     FooterComponent,
+    HomeLayoutComponent,
+    HomeHeaderComponent,
     
     HomeComponent,
     AboutComponent
+    
   ],
   imports: [
     BrowserModule,
