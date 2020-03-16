@@ -30,7 +30,13 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/chocolat/dist/js/jquery.chocolat.js",
-              "src/assets/js/light-box.js"
+              "src/assets/js/light-box.js",
+              "src/assets/js/move-top.js",
+              "src/assets/js/scrolling-icon.js",
+              // "node_modules/jquery/dist/jquery.typer.js",
+              // "src/assets/js/typer-js.js",
+              "node_modules/jquery/dist/main.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
