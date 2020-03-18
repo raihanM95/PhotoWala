@@ -1,3 +1,4 @@
+/*-- scrolling --*/
 $(document).ready(function() {
 	/*
 		var defaults = {
@@ -7,6 +8,14 @@ $(document).ready(function() {
 		easingType: 'linear' 
 		};
 	*/
-			
+	
 	$().UItoTop({ easingType: 'easeOutQuart' });			
 });
+/*-- //scrolling --*/
+
+// jQuery(document).ready(function($) {
+// 	$(".scroll").click(function(event){		
+// 		event.preventDefault();
+// 		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+// 	});
+// });
