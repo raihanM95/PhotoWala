@@ -12,8 +12,14 @@ import { ContactComponent } from './contact/contact.component';
 import { PhotographersComponent } from './photographers/photographers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
+import { AloginComponent } from './admin/alogin/alogin.component';
+
+import { PloginComponent } from './photographer/plogin/plogin.component';
+
+import { UloginComponent } from './user/ulogin/ulogin.component';
+
 const routes: Routes = [
-  // site with layout routes
+  // home with layout routes
   { 
     path: '', 
     component: HomeLayoutComponent,
@@ -34,6 +40,12 @@ const routes: Routes = [
     ]
   },
   
+  // no layout routes
+  { path: 'admin/alogin', component: AloginComponent, pathMatch: 'full' },
+  { path: 'plogin', component: PloginComponent, pathMatch: 'full' },
+  { path: 'ulogin', component: UloginComponent, pathMatch: 'full' },
+  
+
   // otherwise redirect to home
   { path: '**', component: FourzerofourComponent }
 ];

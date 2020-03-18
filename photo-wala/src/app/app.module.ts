@@ -18,6 +18,12 @@ import { ContactComponent } from './contact/contact.component';
 import { PhotographersComponent } from './photographers/photographers.component';
 import { GalleryComponent } from './gallery/gallery.component';
 
+import { AloginComponent } from './admin/alogin/alogin.component';
+
+import { PloginComponent } from './photographer/plogin/plogin.component';
+
+import { UloginComponent } from './user/ulogin/ulogin.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +42,13 @@ import { GalleryComponent } from './gallery/gallery.component';
     ContactComponent,
     PhotographersComponent,
     GalleryComponent,
+    
+    AloginComponent,
 
+    PloginComponent,
+    
+    UloginComponent,
+    
   ],
   imports: [
     BrowserModule,
