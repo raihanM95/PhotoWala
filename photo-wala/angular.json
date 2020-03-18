@@ -25,7 +25,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/chocolat/dist/css/chocolat.css"
+              "node_modules/chocolat/dist/css/chocolat.css",
+              "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
