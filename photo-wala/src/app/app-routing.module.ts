@@ -17,6 +17,7 @@ import { AloginComponent } from './admin/alogin/alogin.component';
 import { PregisterComponent } from './photographer/pregister/pregister.component';
 import { PloginComponent } from './photographer/plogin/plogin.component';
 
+import { UregisterComponent } from './user/uregister/uregister.component';
 import { UloginComponent } from './user/ulogin/ulogin.component';
 
 const routes: Routes = [
@@ -44,8 +45,9 @@ const routes: Routes = [
   // no layout routes
   { path: 'admin/alogin', component: AloginComponent, pathMatch: 'full' },
   { path: 'p/register', component: PregisterComponent, pathMatch: 'full' },
-  { path: 'plogin', component: PloginComponent, pathMatch: 'full' },
-  { path: 'ulogin', component: UloginComponent, pathMatch: 'full' },
+  { path: 'p/login', component: PloginComponent, pathMatch: 'full' },
+  { path: 'u/register', component: UregisterComponent, pathMatch: 'full' },
+  { path: 'u/login', component: UloginComponent, pathMatch: 'full' },
   
 
   // otherwise redirect to home

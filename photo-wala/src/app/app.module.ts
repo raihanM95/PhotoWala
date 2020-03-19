@@ -23,6 +23,7 @@ import { AloginComponent } from './admin/alogin/alogin.component';
 import { PregisterComponent } from './photographer/pregister/pregister.component';
 import { PloginComponent } from './photographer/plogin/plogin.component';
 
+import { UregisterComponent } from './user/uregister/uregister.component';
 import { UloginComponent } from './user/ulogin/ulogin.component';
 
 
@@ -49,6 +50,7 @@ import { UloginComponent } from './user/ulogin/ulogin.component';
     PregisterComponent,
     PloginComponent,
     
+    UregisterComponent,
     UloginComponent,
     
     
