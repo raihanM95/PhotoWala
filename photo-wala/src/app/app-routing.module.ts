@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   
   // no layout routes
-  { path: 'admin/alogin', component: AloginComponent, pathMatch: 'full' },
+  { path: 'c/main', component: AloginComponent, pathMatch: 'full' },
   { path: 'p/register', component: PregisterComponent, pathMatch: 'full' },
   { path: 'p/login', component: PloginComponent, pathMatch: 'full' },
   { path: 'u/register', component: UregisterComponent, pathMatch: 'full' },
