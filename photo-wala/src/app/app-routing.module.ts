@@ -14,6 +14,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 
 import { AloginComponent } from './admin/alogin/alogin.component';
 
+import { PregisterComponent } from './photographer/pregister/pregister.component';
 import { PloginComponent } from './photographer/plogin/plogin.component';
 
 import { UloginComponent } from './user/ulogin/ulogin.component';
@@ -42,6 +43,7 @@ const routes: Routes = [
   
   // no layout routes
   { path: 'admin/alogin', component: AloginComponent, pathMatch: 'full' },
+  { path: 'p/register', component: PregisterComponent, pathMatch: 'full' },
   { path: 'plogin', component: PloginComponent, pathMatch: 'full' },
   { path: 'ulogin', component: UloginComponent, pathMatch: 'full' },
   
