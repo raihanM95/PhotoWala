@@ -23,7 +23,7 @@
     "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-chocolat": "^1.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
