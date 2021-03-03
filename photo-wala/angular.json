@@ -1,35 +1,61 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "photo-wala": {
-      "projectType": "application",
-      "schematics": {},
+    "ngx-admin-demo": {
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/photo-wala",
+            "aot": true,
+            "preserveSymlinks": true,
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
+              "src/assets",
               "src/favicon.ico",
-              "src/assets"
+              "src/favicon.png",
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "/assets/img/markers"
+              }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/typeface-exo/index.css",
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "node_modules/ionicons/scss/ionicons.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/socicon/css/socicon.css",
+              "node_modules/nebular-icons/scss/nebular-icons.scss",
+              "node_modules/pace-js/templates/pace-theme-flash.tmpl.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "src/app/@theme/styles/styles.scss",
+              
               "src/styles.css",
               "node_modules/chocolat/dist/css/chocolat.css",
               "src/assets/css/icon-font.min.css",
               "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
+              "node_modules/pace-js/pace.min.js",
+              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/tinymce/themes/modern/theme.min.js",
+              "node_modules/tinymce/plugins/link/plugin.min.js",
+              "node_modules/tinymce/plugins/paste/plugin.min.js",
+              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "node_modules/echarts/dist/echarts.min.js",
+              "node_modules/echarts/dist/extension/bmap.min.js",
+              "node_modules/chart.js/dist/Chart.min.js",
+              
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/chocolat/dist/js/jquery.chocolat.js",
               "src/assets/js/light-box.js",
@@ -39,34 +65,36 @@
               "src/assets/js/search.js",
               "node_modules/jquery/dist/main.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "angular2-chartjs",
+              "echarts",
+              "lodash",
+              "zrender/lib/svg/svg",
+              "zrender/lib/vml/vml",
+              "style-loader!leaflet/dist/leaflet.css"
             ]
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
+              "budgets": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "budgets": [
+              "fileReplacements": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ]
             }
@@ -75,63 +103,121 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "photo-wala:build"
+            "browserTarget": "ngx-admin-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "photo-wala:build:production"
+              "browserTarget": "ngx-admin-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "photo-wala:build"
+            "browserTarget": "ngx-admin-demo:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
+            "tsConfig": "src/tsconfig.spec.json",
+            "scripts": [
+              "node_modules/pace-js/pace.min.js",
+              "node_modules/tinymce/tinymce.min.js",
+              "node_modules/tinymce/themes/modern/theme.min.js",
+              "node_modules/tinymce/plugins/link/plugin.min.js",
+              "node_modules/tinymce/plugins/paste/plugin.min.js",
+              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "node_modules/echarts/dist/echarts.min.js",
+              "node_modules/echarts/dist/extension/bmap.min.js",
+              "node_modules/chart.js/dist/Chart.min.js",
+              
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/chocolat/dist/js/jquery.chocolat.js",
+              "src/assets/js/light-box.js",
+              "node_modules/jquery/dist/move-top.js",
+              "node_modules/jquery/dist/easing.js",
+              "src/assets/js/scrolling-icon.js",
+              "src/assets/js/search.js",
+              "node_modules/jquery/dist/main.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/typeface-exo/index.css",
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
+              "node_modules/ionicons/scss/ionicons.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/socicon/css/socicon.css",
+              "node_modules/nebular-icons/scss/nebular-icons.scss",
+              "node_modules/pace-js/templates/pace-theme-flash.tmpl.css",
+              "src/app/@theme/styles/styles.scss",
+              
+              "src/styles.css",
+              "node_modules/chocolat/dist/css/chocolat.css",
+              "src/assets/css/icon-font.min.css",
+              "node_modules/animate.css/animate.min.css"
             ],
-            "scripts": []
+            "assets": [
+              "src/assets",
+              "src/favicon.ico",
+              "src/favicon.png",
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "/assets/img/markers"
+              }
+            ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "photo-wala:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "photo-wala:serve:production"
-            }
+            "typeCheck": true,
+            "exclude": []
           }
         }
       }
-    }},
-  "defaultProject": "photo-wala"
+    },
+    "ngx-admin-demo-e2e": {
+      "root": "",
+      "sourceRoot": "",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "ngx-admin-demo:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-admin-demo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "ngx",
+      "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "ngx"
+    }
+  }
 }

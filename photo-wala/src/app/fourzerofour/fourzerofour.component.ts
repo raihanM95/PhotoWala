@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-fourzerofour',
+  selector: 'ngx-fourzerofour',
   templateUrl: './fourzerofour.component.html',
-  styleUrls: ['./fourzerofour.component.css']
+  styleUrls: ['./fourzerofour.component.scss']
 })
 export class FourzerofourComponent implements OnInit {
 
